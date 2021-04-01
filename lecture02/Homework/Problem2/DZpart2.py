@@ -9,7 +9,7 @@ def accuracy_score(y_true, y_predict, percent=None):
     else:
         percent = 50
     # Разделение на TP, FP,FN, TN
-        y_binar = ((y_predict[:,0] >= percent / 100)) * 1
+    y_binar = ((y_predict[:,0] >= percent / 100)) * 1
     count_one_zer_true = np.sum(y_true == 1)
     count_one_zer_pred = np.sum((y_predict[:, 0] == 1) & (y_true == y_predict[:, 0]))
     if count_one_zer_pred / count_one_zer_true < 0.5:
